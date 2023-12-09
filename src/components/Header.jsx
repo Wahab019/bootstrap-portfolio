@@ -1,60 +1,38 @@
-import { Link } from "react-router-dom"
-import 'bootstrap/js/dist/collapse.js';
-import 'bootstrap';
+import "bootstrap/js/dist/collapse.js";
+import "bootstrap";
 
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
-// import Link from 
+// import Link from
 const Header = () => {
+  return (
+    <>
+      {/* navbar */}
+      <Navbar
+        expand="lg"
+        className="navbar navbar-expand-lg navbar-light bg-white py-3"
+      >
+        <Container className="px-5">
+          <Navbar.Brand href="/">
+            <span className="fw-bolder text-primary">Start Bootstrap</span>
+          </Navbar.Brand>
 
-    return (
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-            // navbar
-      
-            <nav className="navbar navbar-expand-lg navbar-light bg-white py-3">
-            <div className="container px-5">
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/resume">Resume</Nav.Link>
+              <Nav.Link href="/projects">Projects</Nav.Link>
+              <Nav.Link href="/contact">Contact</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </>
+  );
+};
 
-                    <Link className="navbar-brand" to={'/'}>
-                        <span className="fw-bolder text-primary">Start Bootstrap</span>
-                    </Link>
-
-                    {/* toggle button */}
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    {/* nav links */}
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li className="nav-item">
-                                <Link className="nav-link" to={'/'}>
-                                    Home
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to={'/resume'}>
-                                    Resume
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to={'/projects'}>
-                                    Projects
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to={'/contact'}>
-                                    Contact
-                                </Link>
-                            </li>
-                        </ul>    
-                    </div>
-            </div>
-            </nav>
-
-
-     
-    )
-
-}
-
-
-export default Header
+export default Header;
